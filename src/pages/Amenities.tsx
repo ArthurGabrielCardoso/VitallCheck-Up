@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Spa, Dumbbell, Pool, Yoga, Utensils, Wine, Coffee, Clock, Car, Plane, Car as CarIcon, MapPin, Waves, Users, Music, BookOpen } from "lucide-react";
+import { Heart, Shield, Stethoscope, Microscope, Utensils, Coffee, Clock, Car, MapPin, Users, Music, BookOpen } from "lucide-react";
 
 export default function Amenities() {
   const { t } = useLanguage();
@@ -16,10 +16,10 @@ export default function Amenities() {
   // Helper function to get the appropriate icon for each amenity
   const getIcon = (categoryName: string, index: number) => {
     const icons = {
-      wellness: [<Spa key={0} />, <Dumbbell key={1} />, <Pool key={2} />, <Yoga key={3} />],
-      dining: [<Utensils key={0} />, <Coffee key={1} />, <Wine key={2} />, <Clock key={3} />],
-      services: [<Clock key={0} />, <Plane key={1} />, <CarIcon key={2} />, <MapPin key={3} />],
-      entertainment: [<Waves key={0} />, <Users key={1} />, <Music key={2} />, <BookOpen key={3} />]
+      wellness: [<Heart key={0} />, <Shield key={1} />, <Stethoscope key={2} />, <Microscope key={3} />],
+      dining: [<Utensils key={0} />, <Coffee key={1} />, <Clock key={2} />, <MapPin key={3} />],
+      services: [<Clock key={0} />, <Car key={1} />, <MapPin key={2} />, <Users key={3} />],
+      entertainment: [<Music key={0} />, <Users key={1} />, <BookOpen key={2} />, <Coffee key={3} />]
     };
     
     return icons[categoryName as keyof typeof icons]?.[index] || <Coffee />;
@@ -31,11 +31,11 @@ export default function Amenities() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background">
+        <section className="relative py-20 bg-gradient-to-r from-dental-light to-white dark:from-dental-dark dark:to-background">
           <div className="container relative z-10 pt-20">
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                MareSereno
+                Clínica DentalCare
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
                 {t.amenitiesPage.title}
@@ -49,7 +49,7 @@ export default function Amenities() {
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-dental-light blur-3xl" />
           </div>
         </section>
         

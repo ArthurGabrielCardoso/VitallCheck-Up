@@ -7,43 +7,43 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ApartmentCard, { ApartmentProps } from "@/components/ApartmentCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
+import { ArrowRight, Star, Shield, Heart, Stethoscope, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Sample apartments data
-const featuredApartments: ApartmentProps[] = [
+// Sample dental services data
+const featuredServices: ApartmentProps[] = [
   {
     id: "1",
-    name: "Deluxe Sea View Suite",
-    description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony.",
-    price: 180,
-    capacity: 2,
-    size: 45,
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Balcony"]
+    name: "Limpeza e Profilaxia",
+    description: "Limpeza profissional completa com aplicação de flúor e orientações personalizadas.",
+    price: 120,
+    capacity: 1,
+    size: 30,
+    image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop",
+    location: "Consultório Principal",
+    features: ["Limpeza", "Flúor", "Orientação", "Raio-X", "Avaliação", "Polimento"]
   },
   {
     id: "2",
-    name: "Premium Family Apartment",
-    description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views.",
-    price: 250,
-    capacity: 4,
-    size: 75,
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
-    location: "Second row",
-    features: ["Wi-Fi", "Kitchen", "Bathroom", "Air Conditioning", "TV", "Washing Machine"]
+    name: "Implantes Dentários",
+    description: "Implantes de alta qualidade com tecnologia avançada e acompanhamento completo.",
+    price: 2500,
+    capacity: 1,
+    size: 60,
+    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop",
+    location: "Sala Cirúrgica",
+    features: ["Implante", "Prótese", "Acompanhamento", "Garantia", "Raio-X 3D", "Pós-operatório"]
   },
   {
     id: "3",
-    name: "Executive Beach Studio",
-    description: "Elegant studio with direct beach access, modern design, and premium finishes.",
-    price: 150,
-    capacity: 2,
-    size: 35,
-    image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop",
-    location: "Beachfront",
-    features: ["Wi-Fi", "Kitchenette", "Bathroom", "Air Conditioning", "TV"]
+    name: "Ortodontia",
+    description: "Tratamento ortodôntico personalizado com aparelhos modernos e eficazes.",
+    price: 350,
+    capacity: 1,
+    size: 45,
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop",
+    location: "Consultório Ortodôntico", 
+    features: ["Aparelho", "Manutenção", "Acompanhamento", "Moldagem", "Planejamento"]
   }
 ];
 
@@ -58,27 +58,27 @@ export default function Index() {
   // Feature items
   const features = [
     {
-      icon: <Waves className="h-8 w-8 text-primary" />,
+      icon: <Star className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.beachfront.title,
       description: t.home.amenities.features.beachfront.description
     },
     {
-      icon: <LifeBuoy className="h-8 w-8 text-primary" />,
+      icon: <Shield className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.pools.title,
       description: t.home.amenities.features.pools.description
     },
     {
-      icon: <Utensils className="h-8 w-8 text-primary" />,
+      icon: <Heart className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.restaurant.title,
       description: t.home.amenities.features.restaurant.description
     },
     {
-      icon: <Wifi className="h-8 w-8 text-primary" />,
+      icon: <Stethoscope className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.wifi.title,
       description: t.home.amenities.features.wifi.description
     },
     {
-      icon: <Coffee className="h-8 w-8 text-primary" />,
+      icon: <Clock className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.bar.title,
       description: t.home.amenities.features.bar.description
     },
@@ -124,22 +124,22 @@ export default function Index() {
               <div className="relative animate-fade-in [animation-delay:300ms]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
-                    alt="Seaside view" 
+                    src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop"
+                    alt="Consultório moderno" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop"
-                    alt="Luxury apartment interior" 
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop"
+                    alt="Equipamentos odontológicos" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop"
-                    alt="Pool view" 
+                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=300&fit=crop"
+                    alt="Atendimento personalizado" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -149,7 +149,7 @@ export default function Index() {
         </section>
         
         {/* Booking Form Section */}
-        <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-r from-dental-light to-white dark:from-dental-dark dark:to-background overflow-hidden">
           <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
@@ -181,7 +181,7 @@ export default function Index() {
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-dental-light blur-3xl" />
           </div>
         </section>
         
@@ -201,9 +201,9 @@ export default function Index() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredApartments.map((apartment, index) => (
-                <div key={apartment.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                  <ApartmentCard apartment={apartment} />
+              {featuredServices.map((service, index) => (
+                <div key={service.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                  <ApartmentCard apartment={service} />
                 </div>
               ))}
             </div>
