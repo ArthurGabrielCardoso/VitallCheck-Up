@@ -2,6 +2,7 @@
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 import { en } from '../locales/en';
 import { it } from '../locales/it';
+import { pt } from '../locales/pt';
 
 type Translations = typeof en;
 
@@ -13,14 +14,15 @@ interface LanguageContextType {
 
 const translations: Record<string, Translations> = {
   en,
-  it
+  it,
+  pt
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState('en');
-  const [t, setT] = useState<Translations>(translations.en);
+  const [language, setLanguage] = useState('pt');
+  const [t, setT] = useState<Translations>(translations.pt);
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
