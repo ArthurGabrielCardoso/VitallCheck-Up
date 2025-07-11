@@ -9,7 +9,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    base: mode === 'production' ? '/VitallCheck-Up/' : '/',
     server: {
       host: "::",
       port: 8080,
