@@ -1,0 +1,126 @@
+/* Estilos específicos para impressão de PDF */
+@media print {
+  /* Esconder elementos que não devem ser impressos */
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Garantir que todo o conteúdo seja impresso */
+  body,
+  html {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+    font-size: 12pt !important;
+    color: black !important;
+  }
+
+  /* Ajustar o conteúdo principal para impressão */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Melhorar a quebra de página */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Garantir que imagens e assinaturas sejam impressas corretamente */
+  img,
+  canvas {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Ajustar cores para impressão */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Estilos para o documento impresso */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1db9b3;
+  }
+
+  .header h1 {
+    color: #1db9b3 !important;
+    margin-bottom: 5px;
+  }
+
+  .section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9 !important;
+    border-radius: 5px;
+  }
+
+  .section-title {
+    color: #1db9b3 !important;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .question {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .question-title {
+    font-weight: bold;
+  }
+
+  .answer {
+    margin-left: 20px;
+  }
+
+  .answer.yes {
+    color: #c89d68 !important;
+    font-weight: bold;
+  }
+
+  .signature-section {
+    margin-top: 30px;
+  }
+
+  .signature-title {
+    margin-bottom: 10px;
+  }
+
+  .signature-image {
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+    max-width: 300px;
+  }
+
+  .signature-date {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .declaration {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff8e1 !important;
+    border-left: 4px solid #c89d68;
+    font-size: 0.9em;
+  }
+
+  .footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+  }
+}

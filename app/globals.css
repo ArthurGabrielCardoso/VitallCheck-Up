@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Novo design system baseado no design inspiration - cores sofisticadas e modernas */
+    --background: 240 10% 98%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    /* Primary: Azul profissional e sofisticado */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Cinza azulado para contraste */
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 240 5% 45%;
+
+    --accent: 220 13% 91%;
+    --accent-foreground: 240 10% 10%;
+
+    /* Success: Verde para indicadores positivos */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Amarelo para alertas */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive: Vermelho para ações críticas */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 240 10% 98%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 240 10% 98%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 240 10% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 20%;
+    --secondary-foreground: 240 10% 98%;
+
+    --muted: 240 6% 20%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 240 6% 24%;
+    --accent-foreground: 240 10% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 24%;
+    --input: 240 6% 24%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Utilitários customizados para o sistema de procedimentos */
+@layer utilities {
+  /* Status badges */
+  .status-ok {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400;
+  }
+
+  .status-warning {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400;
+  }
+
+  .status-critical {
+    @apply bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(217 91% 45%) 100%);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md dark:bg-gray-900/80;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* Animações personalizadas */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  background-size: 1000px 100%;
+}
+
+/* Estilos para impressão */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Melhorar a quebra de página */
+  .print\:break-before-page {
+    break-before: page;
+  }
+
+  .print\:break-inside-avoid {
+    break-inside: avoid;
+  }
+}
+
+/* Estilos específicos para impressão da anamnese */
+@media print {
+  /* Esconder elementos que não devem ser impressos */
+  header,
+  footer,
+  button,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Garantir que todo o conteúdo seja impresso */
+  body,
+  html {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+    font-size: 12pt !important;
+  }
+
+  /* Ajustar o conteúdo principal para impressão */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Melhorar a quebra de página */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* Garantir que imagens e assinaturas sejam impressas corretamente */
+  img,
+  canvas {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Ajustar cores para impressão */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Adicionar cabeçalho na impressão */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+}

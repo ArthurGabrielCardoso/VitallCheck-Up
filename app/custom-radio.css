@@ -1,0 +1,14 @@
+/* Estilo personalizado para os radio buttons */
+.custom-radio {
+  border-radius: 0.125rem !important; /* Cantos levemente arredondados */
+  border-width: 2px !important;
+}
+
+.custom-radio[data-state="checked"] {
+  background-color: #1db9b3 !important; /* Cor primária */
+  border-color: #1db9b3 !important;
+}
+
+.custom-radio::before {
+  border-radius: 0.125rem !important;
+}

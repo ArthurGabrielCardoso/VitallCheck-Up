@@ -1,0 +1,94 @@
+/* Estilo personalizado para os inputs quando ativos */
+.anamnese-input:focus {
+  border-color: #c89d68 !important;
+  box-shadow: 0 0 0 1px #c89d68 !important;
+  outline: none;
+}
+
+/* Estilo personalizado para os radio buttons quadrados */
+.custom-radio-square {
+  border-radius: 0.25rem !important; /* Cantos levemente arredondados */
+  border-width: 2px !important;
+}
+
+.custom-radio-square[data-state="checked"] {
+  background-color: #c89d68 !important; /* Cor secundária */
+  border-color: #c89d68 !important;
+}
+
+.custom-radio-square::before {
+  border-radius: 0.125rem !important;
+}
+
+/* Animação de check */
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.checkmark-animation {
+  animation: checkmark 0.8s ease-in-out forwards;
+}
+
+/* Estilos para melhorar a experiência em tablets */
+@media (max-width: 768px) {
+  .anamnese-input {
+    font-size: 16px !important;
+    padding: 0.75rem !important;
+    height: auto !important;
+  }
+
+  .custom-radio-square {
+    height: 1.25rem !important;
+    width: 1.25rem !important;
+  }
+
+  label {
+    font-size: 1.1rem !important;
+  }
+
+  p.font-medium {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .space-y-6 > div {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .border-b {
+    padding-bottom: 1rem !important;
+  }
+
+  /* Aumentar área de toque para os botões */
+  button {
+    min-height: 3rem !important;
+  }
+
+  /* Melhorar a área de assinatura */
+  .border-2.border-gray-300.rounded-md.h-48 {
+    height: 12rem !important;
+  }
+}
+
+/* Ajustes específicos para telas menores */
+@media (max-width: 480px) {
+  .max-w-xl {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .space-y-6 > div {
+    margin-bottom: 1rem !important;
+  }
+}
